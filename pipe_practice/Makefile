@@ -1,6 +1,16 @@
+CC = gcc
+CFLAGS = -g -Wall
+
+all: main client encrypt
+
+main: main.c
+	$(CC) $(CFLAGS) main.c -o main
+
+client: client.c
+	$(CC) $(CFLAGS) client.c -o client
+
+encrypt: encrypt.c
+	$(CC) $(CFLAGS) encrypt.c -o encrypt
+
 clean:
-	rm -rf *.out
-build:
-	gcc main.c -o main.out -Wall
-	gcc client.c -o client.out -Wall
-	gcc encrypt.c -o encrypt.out -Wall
+	rm -f main client encrypt
